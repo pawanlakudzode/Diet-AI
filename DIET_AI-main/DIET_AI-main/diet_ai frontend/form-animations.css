@@ -1,0 +1,127 @@
+/* Form Animations and Styling */
+
+/* Progress Steps Animation */
+@keyframes progressPulse {
+    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+.progress-step.active .progress-icon {
+    animation: progressPulse 2s infinite;
+}
+
+/* Form Section Transitions */
+@keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.form-section.active {
+    animation: slideInRight 0.5s forwards;
+}
+
+.form-section.prev {
+    animation: slideInLeft 0.5s forwards;
+}
+
+/* Input Focus Effects */
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Checkbox and Radio Button Animations */
+.form-check-input {
+    transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+    animation: checkmarkPop 0.5s ease;
+}
+
+@keyframes checkmarkPop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Diet Card Hover Effects */
+.diet-card {
+    overflow: hidden;
+}
+
+.diet-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.7s ease-in-out;
+    z-index: 1;
+}
+
+.diet-card:hover::before {
+    transform: rotate(45deg) translate(100%, 100%);
+}
+
+/* Submit Button Animation */
+@keyframes submitPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+button[type="submit"] {
+    animation: submitPulse 2s infinite;
+}
+
+/* Invalid Input Animation */
+@keyframes shakeX {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.is-invalid {
+    animation: shakeX 0.6s;
+}
+
+/* Form Section Indicator Animation */
+.form-progress {
+    position: relative;
+}
+
+.form-progress::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #28a745;
+    z-index: 1;
+    transition: width 0.5s ease;
+}
+
+.form-progress.step-1::before { width: 25%; }
+.form-progress.step-2::before { width: 50%; }
+.form-progress.step-3::before { width: 75%; }
+.form-progress.step-4::before { width: 100%; }

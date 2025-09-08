@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diet Assistant</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f8fff8, #e6f2ff);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2E8B57;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border 0.2s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            font-size: 1.1em;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            display: none;
+            margin-top: 30px;
+            background-color: #f1fff5;
+            padding: 25px;
+            border-left: 6px solid #4CAF50;
+            border-radius: 10px;
+        }
+
+        .result h3 {
+            color: #2E8B57;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .meal-plan ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .meal-plan li {
+            background-color: #e0f5e9;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🍽️ AI Diet Assistant</h1>
+
+    <div class="container">
+        <form id="userProfileForm">
+            <div class="form-group">
+                <label for="age">🎂 Age (in years):</label>
+                <input type="number" id="age" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">⚖️ Weight (in kg):</label>
+                <input type="number" id="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="height">📏 Height (in cm):</label>
+                <input type="number" id="height" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">🚻 Gender:</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="goal">🎯 Goal:</label>
+                <select id="goal" required>
+                    <option value="gain">Gain</option>
+                    <option value="lose">Lose</option>
+                    <option value="maintain">Maintain</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="activityLevel">🏃‍♂️ Activity Level:</label>
+                <select id="activityLevel" required>
+                    <option value="sedentary">Sedentary</option>
+                    <option value="light">Light</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="active">Active</option>
+                </select>
+            </div>
+            <button type="submit">📊 Get Suggestion</button>
+        </form>
+
+        <div id="result" class="result">
+            <h3>Your Results</h3>
+            <p><span class="highlight">BMI:</span> <span id="bmi"></span></p>
+            <p><span class="highlight">Status:</span> <span id="bmiMessage"></span></p>
+            <p><span class="highlight">TDEE:</span> <span id="tdee"></span></p>
+
+            <div class="meal-plan">
+                <h3>🍱 Suggested Meal Plan</h3>
+                <ul id="mealPlan"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('userProfileForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const userProfile = {
+                age: parseInt(document.getElementById('age').value),
+                weight: parseInt(document.getElementById('weight').value),
+                height: parseInt(document.getElementById('height').value),
+                gender: document.getElementById('gender').value,
+                goal: document.getElementById('goal').value,
+                activity_level: document.getElementById('activityLevel').value
+            };
+
+            fetch('http://localhost:5000/api/diet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userProfile)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').style.display = 'block';
+
+                document.getElementById('bmi').innerText = `${data.bmi}`;
+                document.getElementById('bmiMessage').innerText = data.bmi_message;
+                document.getElementById('tdee').innerText = `${data.tdee} kcal`;
+
+                const mealPlanList = document.getElementById('mealPlan');
+                mealPlanList.innerHTML = '';
+                data.meal_plan.forEach(meal => {
+                    const mealItem = document.createElement('li');
+                    mealItem.innerHTML = `<strong>${meal.meal}:</strong><br>${meal.foods.map(food => 
+                        `${food.food} (Calories: ${food.calories}, Protein: ${food.protein}g)`
+                    ).join('<br>')}`;
+                    mealPlanList.appendChild(mealItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>

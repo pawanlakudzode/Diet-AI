@@ -1,0 +1,62 @@
+[
+  {
+    "food": "Oatmeal",
+    "calories": 150,
+    "protein": 5
+  },
+  {
+    "food": "Scrambled Eggs",
+    "calories": 180,
+    "protein": 12
+  },
+  {
+    "food": "Brown Rice",
+    "calories": 215,
+    "protein": 5
+  },
+  {
+    "food": "Grilled Chicken",
+    "calories": 300,
+    "protein": 30
+  },
+  {
+    "food": "Salmon",
+    "calories": 367,
+    "protein": 39
+  },
+  {
+    "food": "Steamed Broccoli",
+    "calories": 55,
+    "protein": 5
+  },
+  {
+    "food": "Pancakes",
+    "calories": 250,
+    "protein": 7
+  },
+  {
+    "food": "Avocado Toast",
+    "calories": 300,
+    "protein": 5
+  },
+  {
+    "food": "Boiled Eggs",
+    "calories": 140,
+    "protein": 12
+  },
+  {
+    "food": "Quinoa",
+    "calories": 120,
+    "protein": 4
+  },
+  {
+    "food": "Grilled Vegetables",
+    "calories": 100,
+    "protein": 3
+  },
+  {
+    "food": "Chicken Breast",
+    "calories": 165,
+    "protein": 31
+  }
+]

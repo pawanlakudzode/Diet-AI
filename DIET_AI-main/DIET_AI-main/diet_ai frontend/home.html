@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriPlan - Personalized Diet Planning</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <!-- Website Logo and Name -->
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-flower1 me-2"></i>NutriPlan
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login/Signup</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Your Personalized Diet Plan</h1>
+            <p class="lead mb-4">Achieve your health and fitness goals with customized meal plans tailored to your needs</p>
+            <a href="#diet-form" class="btn btn-light btn-lg">
+                <i class="bi bi-arrow-right-circle me-2"></i>Get Started
+            </a>
+            
+            <!-- Floating Food Icons -->
+            <div class="position-relative mt-5">
+                <div class="food-icon position-absolute" style="top: -30px; left: 10%;">
+                    <i class="bi bi-egg-fried fs-1 text-white animate__animated animate__fadeInUp animate__delay-1s"></i>
+                </div>
+                <div class="food-icon position-absolute" style="top: 20px; left: 25%;">
+                    <i class="bi bi-cup-straw fs-1 text-white animate__animated animate__fadeInUp animate__delay-2s"></i>
+                </div>
+                <div class="food-icon position-absolute" style="top: -20px; left: 40%;">
+                    <i class="bi bi-apple fs-1 text-white animate__animated animate__fadeInUp animate__delay-3s"></i>
+                </div>
+                <div class="food-icon position-absolute" style="top: 10px; left: 55%;">
+                    <i class="bi bi-cup-hot fs-1 text-white animate__animated animate__fadeInUp animate__delay-1s"></i>
+                </div>
+                <div class="food-icon position-absolute" style="top: -40px; left: 70%;">
+                    <i class="bi bi-egg fs-1 text-white animate__animated animate__fadeInUp animate__delay-2s"></i>
+                </div>
+                <div class="food-icon position-absolute" style="top: 0px; left: 85%;">
+                    <i class="bi bi-basket fs-1 text-white animate__animated animate__fadeInUp animate__delay-3s"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Counter Section -->
+    <section class="py-4 bg-light counter-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body py-4">
+                            <i class="bi bi-people fs-1 text-success mb-3"></i>
+                            <h2 class="fw-bold counter" data-target="15000">0</h2>
+                            <p class="text-muted mb-0">Happy Users</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body py-4">
+                            <i class="bi bi-journal-check fs-1 text-success mb-3"></i>
+                            <h2 class="fw-bold counter" data-target="500">0</h2>
+                            <p class="text-muted mb-0">Diet Plans Created</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body py-4">
+                            <i class="bi bi-award fs-1 text-success mb-3"></i>
+                            <h2 class="fw-bold counter" data-target="98">0</h2>
+                            <p class="text-muted mb-0">Success Rate (%)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Why Choose NutriPlan?</h2>
+            <div class="row g-4">
+                <!-- Feature 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm animate-on-scroll" data-animation="fadeInLeft">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-clipboard2-check text-success fs-1"></i>
+                            </div>
+                            <h3 class="card-title h5 fw-bold">Personalized Plans</h3>
+                            <p class="card-text">Custom meal plans based on your age, weight, goals, and dietary preferences.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm animate-on-scroll" data-animation="fadeIn">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-graph-up-arrow text-success fs-1"></i>
+                            </div>
+                            <h3 class="card-title h5 fw-bold">Track Progress</h3>
+                            <p class="card-text">Monitor your progress and adjust your meal plans as you reach your goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm animate-on-scroll" data-animation="fadeInRight">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-award text-success fs-1"></i>
+                            </div>
+                            <h3 class="card-title h5 fw-bold">Expert Guidance</h3>
+                            <p class="card-text">Nutritionally balanced meal plans created by certified nutritionists.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diet Plan Form Section -->
+    <section id="diet-form" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow" data-aos="fade-up">
+                        <div class="card-header bg-success text-white p-4">
+                            <h2 class="mb-0 fw-bold">
+                                <i class="bi bi-clipboard-data me-2"></i>
+                                Get Your Personalized Diet Plan
+                            </h2>
+                        </div>
+                        <div class="card-body p-4">
+                            <!-- User Information Form -->
+                            <form id="dietPlanForm">
+                                <!-- Progress Steps -->
+                                <div class="form-progress mb-5">
+                                    <div class="row text-center">
+                                        <div class="col-md-3 mb-3 mb-md-0">
+                                            <div class="progress-step active">
+                                                <div class="progress-icon">
+                                                    <i class="bi bi-person-circle"></i>
+                                                </div>
+                                                <div class="progress-text">Personal Info</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3 mb-md-0">
+                                            <div class="progress-step">
+                                                <div class="progress-icon">
+                                                    <i class="bi bi-rulers"></i>
+                                                </div>
+                                                <div class="progress-text">Physical Info</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3 mb-md-0">
+                                            <div class="progress-step">
+                                                <div class="progress-icon">
+                                                    <i class="bi bi-trophy"></i>
+                                                </div>
+                                                <div class="progress-text">Goals</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="progress-step">
+                                                <div class="progress-icon">
+                                                    <i class="bi bi-egg-fried"></i>
+                                                </div>
+                                                <div class="progress-text">Diet Preferences</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Form Sections -->
+                                <div class="form-sections">
+                                    <!-- Personal Information -->
+                                    <div class="form-section active" id="section-1">
+                                        <h4 class="mb-4 fw-bold">
+                                            <i class="bi bi-person-circle me-2 text-success"></i>
+                                            Personal Information
+                                        </h4>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6 mb-3 mb-md-0">
+                                                <label for="fullName" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="fullName" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="email" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                            <div class="col-md-6 mb-3 mb-md-0">
+                                                <label for="phone" class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" id="phone">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="birthdate" class="form-label">Date of Birth</label>
+                                                <input type="date" class="form-control" id="birthdate">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-end mt-4">
+                                            <button type="button" class="btn btn-success next-btn">
+                                                Next <i class="bi bi-arrow-right ms-2"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Physical Information -->
+                                    <div class="form-section" id="section-2">
+                                        <h4 class="mb-4 fw-bold">
+                                            <i class="bi bi-rulers me-2 text-success"></i>
+                                            Physical Information
+                                        </h4>
+                                        <div class="row mb-3">
+                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                <label for="age" class="form-label">Age</label>
+                                                <input type="number" class="form-control" id="age" min="18" max="100" required>
+                                            </div>
+                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                <label for="weight" class="form-label">Weight (kg)</label>
+                                                <input type="number" class="form-control" id="weight" min="30" max="300" required>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="height" class="form-label">Height (cm)</label>
+                                                <input type="number" class="form-control" id="height" min="100" max="250" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">Gender</label>
+                                            <div class="d-flex gap-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                                                    <label class="form-check-label" for="male">Male</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                                    <label class="form-check-label" for="female">Female</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                                                    <label class="form-check-label" for="other">Other</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Activity Level -->
+                                        <div class="mb-3">
+                                            <label for="activityLevel" class="form-label">Activity Level</label>
+                                            <select class="form-select" id="activityLevel" required>
+                                                <option value="" selected disabled>Select your activity level</option>
+                                                <option value="sedentary">Sedentary (little or no exercise)</option>
+                                                <option value="light">Lightly active (light exercise 1-3 days/week)</option>
+                                                <option value="moderate">Moderately active (moderate exercise 3-5 days/week)</option>
+                                                <option value="active">Very active (hard exercise 6-7 days/week)</option>
+                                                <option value="extreme">Extremely active (very hard exercise & physical job)</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between mt-4">
+                                            <button type="button" class="btn btn-outline-secondary prev-btn">
+                                                <i class="bi bi-arrow-left me-2"></i> Previous
+                                            </button>
+                                            <button type="button" class="btn btn-success next-btn">
+                                                Next <i class="bi bi-arrow-right ms-2"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Goals -->
+                                    <div class="form-section" id="section-3">
+                                        <h4 class="mb-4 fw-bold">
+                                            <i class="bi bi-trophy me-2 text-success"></i>
+                                            Your Goals
+                                        </h4>
+                                        <div class="mb-4">
+                                            <label for="goal" class="form-label">Primary Goal</label>
+                                            <select class="form-select" id="goal" required>
+                                                <option value="" selected disabled>Select your primary goal</option>
+                                                <option value="weight-loss">Weight Loss</option>
+                                                <option value="muscle-gain">Muscle Gain</option>
+                                                <option value="maintenance">Maintain Current Weight</option>
+                                                <option value="health">Improve Overall Health</option>
+                                                <option value="energy">Increase Energy Levels</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <label class="form-label">Target Areas (Optional)</label>
+                                            <div class="row">
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="targetAbdomen">
+                                                        <label class="form-check-label" for="targetAbdomen">Abdomen</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="targetArms">
+                                                        <label class="form-check-label" for="targetArms">Arms</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="targetLegs">
+                                                        <label class="form-check-label" for="targetLegs">Legs</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="targetBack">
+                                                        <label class="form-check-label" for="targetBack">Back</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="targetChest">
+                                                        <label class="form-check-label" for="targetChest">Chest</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="targetGlutes">
+                                                        <label class="form-check-label" for="targetGlutes">Glutes</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="timeframe" class="form-label">Timeframe</label>
+                                            <select class="form-select" id="timeframe">
+                                                <option value="" selected disabled>How quickly do you want to see results?</option>
+                                                <option value="1-month">1 Month</option>
+                                                <option value="3-months">3 Months</option>
+                                                <option value="6-months">6 Months</option>
+                                                <option value="long-term">Long-term sustainable plan</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between mt-4">
+                                            <button type="button" class="btn btn-outline-secondary prev-btn">
+                                                <i class="bi bi-arrow-left me-2"></i> Previous
+                                            </button>
+                                            <button type="button" class="btn btn-success next-btn">
+                                                Next <i class="bi bi-arrow-right ms-2"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Dietary Preferences -->
+                                    <div class="form-section" id="section-4">
+                                        <h4 class="mb-4 fw-bold">
+                                            <i class="bi bi-egg-fried me-2 text-success"></i>
+                                            Dietary Preferences
+                                        </h4>
+                                        <div class="mb-4">
+                                            <label class="form-label">Diet Type</label>
+                                            <div class="row">
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check diet-type-card">
+                                                        <input class="form-check-input" type="radio" name="dietType" id="regular" value="regular" required>
+                                                        <label class="form-check-label diet-card" for="regular">
+                                                            <div class="text-center p-3">
+                                                                <i class="bi bi-egg-fried fs-1 mb-2 text-success"></i>
+                                                                <h5>Regular</h5>
+                                                                <p class="mb-0 small">No Restrictions</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check diet-type-card">
+                                                        <input class="form-check-input" type="radio" name="dietType" id="vegetarian" value="vegetarian">
+                                                        <label class="form-check-label diet-card" for="vegetarian">
+                                                            <div class="text-center p-3">
+                                                                <i class="bi bi-flower1 fs-1 mb-2 text-success"></i>
+                                                                <h5>Vegetarian</h5>
+                                                                <p class="mb-0 small">No meat or fish</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check diet-type-card">
+                                                        <input class="form-check-input" type="radio" name="dietType" id="vegan" value="vegan">
+                                                        <label class="form-check-label diet-card" for="vegan">
+                                                            <div class="text-center p-3">
+                                                                <i class="bi bi-flower3 fs-1 mb-2 text-success"></i>
+                                                                <h5>Vegan</h5>
+                                                                <p class="mb-0 small">No animal products</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check diet-type-card">
+                                                        <input class="form-check-input" type="radio" name="dietType" id="keto" value="keto">
+                                                        <label class="form-check-label diet-card" for="keto">
+                                                            <div class="text-center p-3">
+                                                                <i class="bi bi-droplet-half fs-1 mb-2 text-success"></i>
+                                                                <h5>Keto</h5>
+                                                                <p class="mb-0 small">Low carb, high fat</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check diet-type-card">
+                                                        <input class="form-check-input" type="radio" name="dietType" id="paleo" value="paleo">
+                                                        <label class="form-check-label diet-card" for="paleo">
+                                                            <div class="text-center p-3">
+                                                                <i class="bi bi-tree fs-1 mb-2 text-success"></i>
+                                                                <h5>Paleo</h5>
+                                                                <p class="mb-0 small">Whole foods based</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check diet-type-card">
+                                                        <input class="form-check-input" type="radio" name="dietType" id="mediterranean" value="mediterranean">
+                                                        <label class="form-check-label diet-card" for="mediterranean">
+                                                            <div class="text-center p-3">
+                                                                <i class="bi bi-cup-hot fs-1 mb-2 text-success"></i>
+                                                                <h5>Mediterranean</h5>
+                                                                <p class="mb-0 small">Heart-healthy</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="allergies" class="form-label">Food Allergies or Intolerances</label>
+                                            <textarea class="form-control" id="allergies" rows="2" placeholder="List any food allergies or intolerances"></textarea>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="additionalInfo" class="form-label">Additional Information</label>
+                                            <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Any other information you'd like us to know"></textarea>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between mt-4">
+                                            <button type="button" class="btn btn-outline-secondary prev-btn">
+                                                <i class="bi bi-arrow-left me-2"></i> Previous
+                                            </button>
+                                            <button type="submit" class="btn btn-success btn-lg">
+                                                <i class="bi bi-check-circle me-2"></i>Generate My Diet Plan
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Meal Plans Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Sample Meal Plans</h2>
+            <div class="row g-4">
+                <!-- Weight Loss Plan -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 meal-plan-card">
+                        <div class="card-header bg-success text-white">
+                            <h3 class="h5 mb-0 fw-bold">Weight Loss Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="h6 fw-bold">Breakfast</h4>
+                            <p>Greek yogurt with berries and a tablespoon of honey</p>
+                            
+                            <h4 class="h6 fw-bold">Lunch</h4>
+                            <p>Grilled chicken salad with olive oil and lemon dressing</p>
+                            
+                            <h4 class="h6 fw-bold">Dinner</h4>
+                            <p>Baked salmon with steamed vegetables</p>
+                            
+                            <h4 class="h6 fw-bold">Snacks</h4>
+                            <p>Apple slices with almond butter</p>
+                            
+                            <div class="text-center mt-3">
+                                <span class="badge bg-success">1500-1700 calories</span>
+                                <span class="badge bg-secondary">High Protein</span>
+                                <span class="badge bg-info">Low Carb</span>
+                            </div>
+                            
+                            <div class="d-grid mt-4">
+                                <a href="#" class="btn btn-outline-success download-meal-plan" data-plan="weight-loss">
+                                    <i class="bi bi-download me-2"></i>Download Plan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Muscle Gain Plan -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 meal-plan-card">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="h5 mb-0 fw-bold">Muscle Gain Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="h6 fw-bold">Breakfast</h4>
+                            <p>Oatmeal with banana, protein powder, and peanut butter</p>
+                            
+                            <h4 class="h6 fw-bold">Lunch</h4>
+                            <p>Brown rice with grilled chicken breast and mixed vegetables</p>
+                            
+                            <h4 class="h6 fw-bold">Dinner</h4>
+                            <p>Lean beef steak with sweet potato and broccoli</p>
+                            
+                            <h4 class="h6 fw-bold">Snacks</h4>
+                            <p>Protein shake and a handful of nuts</p>
+                            
+                            <div class="text-center mt-3">
+                                <span class="badge bg-primary">2500-2800 calories</span>
+                                <span class="badge bg-secondary">High Protein</span>
+                                <span class="badge bg-warning text-dark">Moderate Carbs</span>
+                            </div>
+                            
+                            <div class="d-grid mt-4">
+                                <a href="#" class="btn btn-outline-primary download-meal-plan" data-plan="muscle-gain">
+                                    <i class="bi bi-download me-2"></i>Download Plan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vegetarian Plan -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 meal-plan-card">
+                        <div class="card-header bg-info text-white">
+                            <h3 class="h5 mb-0 fw-bold">Vegetarian Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="h6 fw-bold">Breakfast</h4>
+                            <p>Spinach and mushroom omelet with whole grain toast</p>
+                            
+                            <h4 class="h6 fw-bold">Lunch</h4>
+                            <p>Quinoa bowl with roasted vegetables and chickpeas</p>
+                            
+                            <h4 class="h6 fw-bold">Dinner</h4>
+                            <p>Lentil soup with a side salad and whole grain bread</p>
+                            
+                            <h4 class="h6 fw-bold">Snacks</h4>
+                            <p>Greek yogurt with mixed nuts and honey</p>
+                            
+                            <div class="text-center mt-3">
+                                <span class="badge bg-info">1800-2000 calories</span>
+                                <span class="badge bg-secondary">Plant Protein</span>
+                                <span class="badge bg-success">High Fiber</span>
+                            </div>
+                            
+                            <div class="d-grid mt-4">
+                                <a href="#" class="btn btn-outline-info download-meal-plan" data-plan="vegetarian">
+                                    <i class="bi bi-download me-2"></i>Download Plan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" data-aos="fade-up">What Our Users Say</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Testimonial 1 -->
+                            <div class="carousel-item active">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body text-center p-5">
+                                        <div class="testimonial-quote mb-4">
+                                            <i class="bi bi-quote fs-1 text-success opacity-25"></i>
+                                        </div>
+                                        <p class="lead mb-4">"NutriPlan helped me lose 15kg in just 3 months! The meal plans were easy to follow and I never felt hungry. The downloadable recipes made meal prep so simple!"</p>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="testimonial-avatar me-3">
+                                                <img src="/placeholder.svg?height=60&width=60" class="rounded-circle" alt="Sarah Johnson">
+                                            </div>
+                                            <div class="text-start">
+                                                <h5 class="mb-0 fw-bold">Sarah Johnson</h5>
+                                                <p class="text-muted">Lost 15kg in 3 months</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 2 -->
+                            <div class="carousel-item">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body text-center p-5">
+                                        <div class="testimonial-quote mb-4">
+                                            <i class="bi bi-quote fs-1 text-success opacity-25"></i>
+                                        </div>
+                                        <p class="lead mb-4">"As an athlete, I needed a diet plan that supported my training. NutriPlan provided exactly what I needed to gain muscle and improve performance. The downloadable meal plans are a game-changer!"</p>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="testimonial-avatar me-3">
+                                                <img src="/placeholder.svg?height=60&width=60" class="rounded-circle" alt="Michael Rodriguez">
+                                            </div>
+                                            <div class="text-start">
+                                                <h5 class="mb-0 fw-bold">Michael Rodriguez</h5>
+                                                <p class="text-muted">Gained 8kg of muscle</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 3 -->
+                            <div class="carousel-item">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body text-center p-5">
+                                        <div class="testimonial-quote mb-4">
+                                            <i class="bi bi-quote fs-1 text-success opacity-25"></i>
+                                        </div>
+                                        <p class="lead mb-4">"I've tried many diet plans before, but NutriPlan is the only one that worked for me. The personalized approach makes all the difference! Being able to download my meal plan and shopping list is so convenient."</p>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="testimonial-avatar me-3">
+                                                <img src="/placeholder.svg?height=60&width=60" class="rounded-circle" alt="Emily Chen">
+                                            </div>
+                                            <div class="text-start">
+                                                <h5 class="mb-0 fw-bold">Emily Chen</h5>
+                                                <p class="text-muted">Improved energy levels</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        <!-- Indicators -->
+                        <div class="carousel-indicators position-relative mt-4">
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active bg-success" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="bg-success" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" class="bg-success" aria-label="Slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-success text-white text-center position-relative overflow-hidden">
+        <div class="container position-relative" style="z-index: 1;">
+            <div data-aos="zoom-in">
+                <h2 class="mb-3 fw-bold">Ready to Transform Your Diet?</h2>
+                <p class="lead mb-4">Join thousands of satisfied users who have achieved their health and fitness goals with NutriPlan</p>
+                <a href="login.html" class="btn btn-light btn-lg animate-pulse">
+                    <i class="bi bi-person-plus me-2"></i>Sign Up Now
+                </a>
+                <p class="mt-3 small">Get your first personalized diet plan for free!</p>
+            </div>
+        </div>
+        
+        <!-- Animated Background Elements -->
+        <div class="position-absolute" style="top: 10%; left: 5%; opacity: 0.1;">
+            <i class="bi bi-egg-fried display-1 animate-float"></i>
+        </div>
+        <div class="position-absolute" style="top: 60%; left: 15%; opacity: 0.1;">
+            <i class="bi bi-apple display-1 animate-float" style="animation-delay: 0.5s;"></i>
+        </div>
+        <div class="position-absolute" style="top: 20%; right: 10%; opacity: 0.1;">
+            <i class="bi bi-cup-straw display-1 animate-float" style="animation-delay: 1s;"></i>
+        </div>
+        <div class="position-absolute" style="top: 70%; right: 20%; opacity: 0.1;">
+            <i class="bi bi-basket display-1 animate-float" style="animation-delay: 1.5s;"></i>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-right">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-flower1 me-2"></i>NutriPlan
+                    </h5>
+                    <p>Your personalized diet planning solution for a healthier lifestyle.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white"><i class="bi bi-chevron-right me-2"></i>Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white"><i class="bi bi-chevron-right me-2"></i>About Us</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-white"><i class="bi bi-chevron-right me-2"></i>Login/Signup</a></li>
+                        <li class="mb-2"><a href="#" class="text-white"><i class="bi bi-chevron-right me-2"></i>Privacy Policy</a></li>
+                        <li><a href="#" class="text-white"><i class="bi bi-chevron-right me-2"></i>Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4" data-aos="fade-left" data-aos-delay="200">
+                    <h5 class="fw-bold mb-3">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>info@nutriplan.com</li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>(123) 456-7890</li>
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>123 Nutrition Street<br>San Francisco, CA 94105</li>
+                    </ul>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-light">
+                            <i class="bi bi-chat-dots-fill me-2"></i>Live Chat
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 NutriPlan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+    
+    <!-- Additional Home Page Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Multi-step form navigation
+            const nextButtons = document.querySelectorAll('.next-btn');
+            const prevButtons = document.querySelectorAll('.prev-btn');
+            const formSections = document.querySelectorAll('.form-section');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            
+            let currentSection = 0;
+            
+            // Next button click
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Validate current section
+                    const currentFormSection = formSections[currentSection];
+                    const requiredFields = currentFormSection.querySelectorAll('[required]');
+                    let isValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (field.value.trim() === '' || 
+                            (field.type === 'radio' && !document.querySelector(`input[name="${field.name}"]:checked`))) {
+                            isValid = false;
+                            field.classList.add('is-invalid');
+                            // Add shake animation
+                            field.classList.add('animate__animated', 'animate__shakeX');
+                            setTimeout(() => {
+                                field.classList.remove('animate__animated', 'animate__shakeX');
+                            }, 1000);
+                        } else {
+                            field.classList.remove('is-invalid');
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        return;
+                    }
+                    
+                    // Hide current section
+                    formSections[currentSection].classList.remove('active');
+                    progressSteps[currentSection].classList.add('completed');
+                    
+                    // Show next section
+                    currentSection++;
+                    formSections[currentSection].classList.add('active');
+                    progressSteps[currentSection].classList.add('active');
+                    
+                    // Scroll to top of form
+                    document.querySelector('#diet-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+            
+            // Previous button click
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Hide current section
+                    formSections[currentSection].classList.remove('active');
+                    progressSteps[currentSection].classList.remove('active');
+                    
+                    // Show previous section
+                    currentSection--;
+                    formSections[currentSection].classList.add('active');
+                    
+                    // Scroll to top of form
+                    document.querySelector('#diet-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+            
+            // Diet type card selection
+            const dietCards = document.querySelectorAll('.diet-card');
+            dietCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Add selected class to clicked card
+                    dietCards.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Add floating animation to food icons
+            const foodIcons = document.querySelectorAll('.food-icon i');
+            foodIcons.forEach((icon, index) => {
+                icon.style.animation = `float ${3 + (index % 3)}s ease-in-out infinite ${index * 0.5}s`;
+            });
+        });
+    </script>
+    
+    <!-- Additional CSS for form steps -->
+    <style>
+        /* Form Progress Steps */
+        .progress-step {
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .progress-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #f8f9fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            border: 2px solid #dee2e6;
+            font-size: 24px;
+            color: #6c757d;
+            transition: all 0.3s ease;
+        }
+        
+        .progress-step.active .progress-icon {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .progress-step.completed .progress-icon {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: white;
+        }
+        
+        .progress-step::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background-color: #dee2e6;
+            z-index: 0;
+        }
+        
+        .progress-step:last-child::after {
+            display: none;
+        }
+        
+        .progress-step.active::after,
+        .progress-step.completed::after {
+            background-color: #28a745;
+        }
+        
+        /* Form Sections */
+        .form-section {
+            display: none;
+        }
+        
+        .form-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        /* Diet Type Cards */
+        .diet-type-card {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .diet-type-card input {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .diet-card {
+            display: block;
+            cursor: pointer;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .diet-card:hover {
+            border-color: #28a745;
+            transform: translateY(-5px);
+        }
+        
+        .diet-type-card input:checked + .diet-card {
+            border-color: #28a745;
+            background-color: rgba(40, 167, 69, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.15);
+        }
+        
+        /* Testimonial styling */
+        .testimonial-avatar img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border: 3px solid #28a745;
+        }
+        
+        .testimonial-quote {
+            height: 40px;
+        }
+        
+        /* Food icons animation */
+        .food-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</body>
+</html>

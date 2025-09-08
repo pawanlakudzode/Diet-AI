@@ -1,0 +1,10 @@
+{
+  "name": "John Doe",
+  "age": 25,
+  "gender": "Male",
+  "height": 180,
+  "weight": 75,
+  "goal": "gain",
+  "activity_level": "moderate",
+  "allergies": ["peanuts"]
+}

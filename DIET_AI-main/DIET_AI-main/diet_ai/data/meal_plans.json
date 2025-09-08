@@ -1,0 +1,44 @@
+{
+  "lose": [
+    {
+      "meal": "Breakfast",
+      "foods": ["Oatmeal", "Scrambled Eggs"]
+    },
+    {
+      "meal": "Lunch",
+      "foods": ["Brown Rice", "Grilled Chicken"]
+    },
+    {
+      "meal": "Dinner",
+      "foods": ["Steamed Broccoli", "Salmon"]
+    }
+  ],
+  "gain": [
+    {
+      "meal": "Breakfast",
+      "foods": ["Pancakes", "Scrambled Eggs"]
+    },
+    {
+      "meal": "Lunch",
+      "foods": ["Brown Rice", "Grilled Chicken"]
+    },
+    {
+      "meal": "Dinner",
+      "foods": ["Salmon", "Steamed Broccoli"]
+    }
+  ],
+  "maintain": [
+    {
+      "meal": "Breakfast",
+      "foods": ["Avocado Toast", "Boiled Eggs"]
+    },
+    {
+      "meal": "Lunch",
+      "foods": ["Quinoa", "Grilled Fish"]
+    },
+    {
+      "meal": "Dinner",
+      "foods": ["Grilled Vegetables", "Chicken Breast"]
+    }
+  ]
+}
